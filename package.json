@@ -1,6 +1,6 @@
 {
   "name": "@gera2ld/rem",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Adapt to different screens using rem.",
   "author": "Gerald <i@gerald.top>",
   "license": "ISC",
