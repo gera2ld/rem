@@ -14,7 +14,7 @@
     "prebuild": "npm run lint && gulp clean",
     "build": "tsc && cross-env NODE_ENV=production gulp build",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "main": "dist/index.common.js",
   "module": "dist/index.esm.js",
