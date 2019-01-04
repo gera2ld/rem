@@ -8,7 +8,16 @@ function initSupport() {
   support = { vw };
 }
 
-export function scaleWidth(options: any = {}) {
+export interface IScaleOptions {
+  stdWidth?: number;
+  stdHeight?: number;
+  basePx?: number;
+  maxWidth?: number;
+  mode?: 'vw' | 'px';
+  resize?: boolean;
+}
+
+export function scaleWidth(options: IScaleOptions = {}) {
   initSupport();
   const {
     stdWidth = 750,
@@ -35,7 +44,7 @@ export function scaleWidth(options: any = {}) {
   }
 }
 
-export function scaleHeight(options: any = {}) {
+export function scaleHeight(options: IScaleOptions = {}) {
   initSupport();
   const {
     stdHeight = 750,

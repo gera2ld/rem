@@ -18,4 +18,27 @@ $ yarn add @gera2ld/rem
 import { scaleWidth } from '@gera2ld/rem';
 
 scaleWidth();
+// or
+scaleWidth({
+  mode: 'px',
+  resize: false,
+});
 ```
+
+### Options
+
+- `mode`
+
+  - `'vw'`
+
+    Use `vw` as root unit if supported.
+
+  - `'px'`
+
+    Use `px` as root unit.
+
+  By default, if `vw` is supported, `mode` is set to `'vw'`, otherwise `'px'`.
+
+- `resize`
+
+  Whether the font size of root should be updated on resize. By default, `resize` is set to `true` if `vw` is not supported, otherwise `false`.
