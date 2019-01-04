@@ -14,6 +14,7 @@ export function scaleWidth(options: any = {}) {
     stdWidth = 750,
     basePx = 100,
     maxWidth = 768,
+    mode = support.vw ? 'vw' : 'px',
     resize = !support.vw,
   } = options;
   onResize();
@@ -25,7 +26,7 @@ export function scaleWidth(options: any = {}) {
     let fontSize;
     if (maxWidth && clientWidth > maxWidth) {
       fontSize = `${maxWidth / stdWidth * basePx}px`;
-    } else if (support.vw) {
+    } else if (support.vw && mode === 'vw') {
       fontSize = `${basePx / stdWidth * 100}vw`;
     } else {
       fontSize = `${clientWidth / stdWidth * basePx}px`;
@@ -39,6 +40,7 @@ export function scaleHeight(options: any = {}) {
   const {
     stdHeight = 750,
     basePx = 100,
+    mode = support.vw ? 'vw' : 'px',
     resize = !support.vw,
   } = options;
   onResize();
@@ -47,7 +49,7 @@ export function scaleHeight(options: any = {}) {
   function onResize() {
     const docEl = document.documentElement;
     let fontSize;
-    if (support.vw) {
+    if (support.vw && mode === 'vw') {
       fontSize = `${basePx / stdHeight * 100}vh`;
     } else {
       fontSize = `${docEl.clientHeight / stdHeight * basePx}px`;
